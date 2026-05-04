@@ -66,7 +66,7 @@ models:
             params:
               unit: 'KB'
     experiment: &student_experiment !join [*dataset_name, '-', *student_model_name, '50-fp-beta0.16_from_', *teacher_model_name]
-    ckpt: !join ['./resource/ckpt/ilsvrc2012/supervised_compression/entropic_student/', *student_experiment, '.pt']
+    ckpt: '/home/g.esposito/AlternativeModels-SC2/resource/ckpt/ilsvrc2012/supervised_compression/entropic_student/ilsvrc2012-splittable_regnety6.4gf-fp-beta0.16_from_regnety6.4gf.pt'
 
 train:
   log_freq: 1000

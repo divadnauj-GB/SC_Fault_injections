@@ -2,7 +2,7 @@ datasets:
   ilsvrc2012:
     name: &dataset_name 'ilsvrc2012'
     type: 'ImageFolder'
-    root: &root_dir !join ['~/dataset/', *dataset_name]
+    root: &root_dir !join ['/home/dataset/', *dataset_name]
     splits:
       train:
         dataset_id: &imagenet_train !join [*dataset_name, '/train']
@@ -75,7 +75,7 @@ models:
             params:
               unit: 'KB'
     experiment: &experiment !join [*dataset_name, '-resnet50-bq', *bch, 'ch_from_', *teacher_model_name]
-    ckpt: !join ['./resource/ckpt/ilsvrc2012/supervised_compression/ghnd-bq/', *experiment, '.pt']
+    ckpt: '/home/g.esposito/AlternativeModels-SC2/resource/ckpt/ilsvrc2012/supervised_compression/ghnd-bq/ilsvrc2012-resnet50-bq12ch_from_resnet50.pt'
 
 train:
   log_freq: 1000
